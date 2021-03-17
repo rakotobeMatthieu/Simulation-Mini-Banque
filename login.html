@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Banque en ligne</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/css/bootstrap.css" rel="stylesheet"> 
+    <link href="assets/css/main.css" rel="stylesheet"> 
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="client2.js"></script>
+</head>
+<body style="background-image: url('assets/img/banque3.png');background-repeat: no-repeat;background-color: #2A2E3A">
+    <script src="http://code.angularjs.org/1.0.0rc10/angular-1.0.0rc10.js"></script>
+    <script src="http://code.angularjs.org/1.0.0rc10/angular-cookies-1.0.0rc10.js"></script>
+    <script>
+        angular.module('myApp', ['ngCookies']);
+        function CookieCtrl($scope, $cookieStore,$window) {
+
+        if($cookieStore.get('cookiesLogin')==null){
+            $window.location.href = "login.html";
+        }else{
+            $window.location.href = "accueil.html";
+        }
+
+        }
+    </script> 
+    <div class="container">
+        <div ng-controller="loginCtrl" class="log">
+            <div>
+                <center>
+                    <img src="assets/img/avatar2.png" width="100" />
+                    <h3>Veuillez-vous connecter</h3>
+                </center> 
+            </div>
+            <form class="form-horizontal" action="" method="">       
+                <div class="contenu">
+                    <div>
+                        <label><img src="assets/img/mail.png" width="16" />  Email</label><br>
+                        <input style="width:100%" type="email" ng-model ="email" class="form-control" value="rindranyainaramiandrisoa@gmail.com"></input>
+                    </div><br>
+                    <div>
+                        <label><img src="assets/img/mdp.png" width="17" />  Mot de passe</label><br>
+                        <input style="width:100%" ng-model ="mdp" type="password" class="form-control" value="rindraMdp"></input>
+                    </div><br>
+                    <div padding>
+                        <button style="width:100%" class="btn  btn-primary" ng-click="login()" button block>Se connecter</button>  
+                    </div>
+                    <br><p style="text-align: center;color:grey">{{loader}}</p>
+                    <hr>
+                    <div id="signin" padding>
+                        <p style="text-align: center">Si vous n'avez pas de compte, cliquer sur <span style="color:#488aff" ng-click="inscription()">S'inscrire</span></p>
+                        <button style="width:100%" class="btn  btn-primary" ng-click="inscription()" button block><img src="assets/img/insc.png" width="20" /><span style="margin-left:1%">S'inscrire</span></button>  
+                    </div>
+                </div>
+                <hr>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="assets/js/jquery.min.js"></script> 
+<script src="assets/js/bootstrap.min.js"></script> 
+</html> 

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Décaissement</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/css/bootstrap.css" rel="stylesheet"> 
+    <link href="assets/css/main.css" rel="stylesheet"> 
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="cotisation.js"></script>
+</head>
+<body ng-app>
+    <div class="container" style="padding-top:1%;margin-top:5px;border-radius: 7px;">
+        <div ng-controller="cotisationCtrl">
+            <nav>
+                <div  class="navRna">
+                    <a class="aNav" href="accueil.html" style="margin-left: 10%"><img src="assets/img/accueil.png" width="21" /> Accueil</a>
+                    <a class="aNav" href="profil.html" style="margin-left: 10%"> <img src="assets/img/cnx2.png" width="26"/>Profil</a>
+                    <a class="aNav" href="activite.html" style="margin-left: 10%"><img src="assets/img/activite.png" width="24"/>Vos activités</a>
+                    <a class="aNav" ng-click="dec()" style="margin-left: 25%"><img src="assets/img/dcnx2.png" width="23"/>  Déconnexion</a>
+                </div>
+            </nav>
+            <br><br>
+            <div class="row">
+                <div class="col-md-5">
+                    <img src="assets/img/rna2.jpg" width="150" alt="" class="img-circle">
+                    <br><br>
+                    <div>
+                        <p><span style="color:#488aff;font-weight: bold">{{nom}}</span></p>
+                        <p>{{prenom}}</p>
+                        <p>Argent: {{argent}} $</p>
+                    </div>
+                    <h2><img src="assets/img/porc.png" width="30" />  Créer une cotisation</h2>
+                    <label floating>Nom de votre cotisation</label><br>
+                    <input ng-model = "nomCot" type="text"></input><br><br>
+                    <label floating>Montant à payer ($)</label><br>
+                    <input ng-model = "montantCot" type="number"></input><br><br>
+                    <button ng-click="cotisation()" class="btn  btn-primary">Créer</button>  
+                </div>
+                <div class="col-md-6 col-md-offset-1">
+                    <h2>Liste des cotisations</h2>
+                    <p id="cnx" style="color:grey">En attente de la connexion ...</p>
+                    <table class="table table-striped">
+                        <tr>
+                            <th style="color:#488aff"><img src="assets/img/cal.png" width="15"/>  Nom</th>
+                            <th style="color:#488aff"><img src="assets/img/int.png" width="15"/>  Montant ($)</th>
+                        </tr>
+                        <tr ng-repeat="data in dataListe">
+                            <td>{{data.nom}}</td>
+                            <td>{{data.valeur}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

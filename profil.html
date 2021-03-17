@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Décaissement</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/css/bootstrap.css" rel="stylesheet"> 
+    <link href="assets/css/main.css" rel="stylesheet"> 
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="profil.js"></script>
+</head>
+<body ng-app>
+    <div class="container" style="padding-top:1%;margin-top:5px;border-radius: 7px;">
+        <div ng-controller="profilCtrl">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav>
+                        <div  class="navRna">
+                            <a class="aNav" href="accueil.html" style="margin-left: 10%"><img src="assets/img/accueil.png" width="21" /> Accueil</a>
+                            <a class="aNav" href="profil.html" style="margin-left: 10%"> <img src="assets/img/cnx2.png" width="26"/>Profil</a>
+                            <a class="aNav" href="activite.html" style="margin-left: 10%"><img src="assets/img/activite.png" width="24"/> Vos activités</a>
+                            <a class="aNav" ng-click="dec()" style="margin-left: 25%"><img src="assets/img/dcnx2.png" width="23"/>  Déconnexion</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="assets/img/rna2.jpg" height="175" alt="" class="img-thumbnail" style="background-attachment:fixed">
+                    <div class="form-horizontal">
+                        <h3><span style="color:#488aff">Modifier mot de passe</span></h3>
+                        <div>
+                            <label floating><span style="color:#6f7482">(*) Mot de passe actuel</span></label>
+                            <input ng-model ="mdpVer2" type="text" class="form-control"></input>
+                        </div>
+                        <div>
+                            <label floating><span style="color:#6f7482">(*) Nouveau mot de passe</span></label>
+                            <input ng-model ="mdpNouv" type="text" class="form-control"></input>
+                        </div>
+                        <div>
+                            <label floating><span style="color:#6f7482">(*) Confirmer le nouveau mot de passe</span></label>
+                            <input ng-model ="mdpNouv2" type="text" class="form-control"></input>
+                        </div><br>
+                        <p style="text-align: center">En modifiant votre mot de passe, vous devriez vous reconnecter.</p><br>
+                        <button ng-click="modifMdp()" class="btn  btn-primary" style="width:100%">Valider</button>  
+                    </div>
+                </div>
+                <div class="col-md-7 col-md-offset-1">
+                    <form action="" class="form-horizontal">
+                        <div class="contenu">
+                            <div>
+                                <span style="color:#488aff;font-weight: bold;">Argent:</span> {{argent}} $
+                            </div><br>
+                            <div>
+                                <label floating><span style="color:#488aff"><img src="assets/img/images.png" width="17" /> Nom</span></label><br>
+                                <input ng-model ="nom" type="text" value="{{nom}}" class="form-control" required></input>
+                            </div><br>
+                            <div>
+                                <label floating><span style="color:#488aff"><img src="assets/img/crayon.png" width="13" /> Prénom</span></label><br>
+                                <input ng-model ="prenom" type="text" value="{{prenom}}" class="form-control" required></input>
+                            </div><br>
+                            <div>
+                                <label floating><span style="color:#488aff"><img src="assets/img/gato2.png" width="17" /> Date de naissance</span></label><br>
+                                <input ng-model ="naissance" type="text" value="{{naissance}}" class="form-control" required></input>
+                            </div><br>
+                            <div>
+                                <label floating><span style="color:#488aff"><img src="assets/img/hf2.png" width="17" /> Sexe</span></label><br>
+                                <select ng-model ="sexe" class="form-control" required>
+                                    <option value="Homme" selected>Homme</option>
+                                    <option value="Femme">Femme</option>
+                                </select>
+                            </div><br>
+                            <div>
+                                <label floating><span style="color:#488aff"><img src="assets/img/mail.png" width="17" /> email</span></label><br>
+                                <input ng-model ="email" type="email" value="{{email}}" class="form-control" required></input>
+                            </div><br>
+                            <div>
+                                <label floating><span style="color:#488aff"><img src="assets/img/phone.png" width="17" /> Téléphone</span></label><br>
+                                <input ng-model ="phone" type="text" value="{{phone}}" class="form-control"></input>
+                            </div><br>
+                            <div>
+                                <label floating><span style="color:#488aff"><img src="assets/img/mdp.png" width="17" /> Entrer votre mot de passe pour valider</span></label><br>
+                                <input ng-model ="mdpVer" type="text" class="form-control" required></input>
+                            </div><br>
+                            <button ng-click="modif()" class="btn  btn-primary" style="width:100%">Modifier</button>  
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Activité</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/css/bootstrap.css" rel="stylesheet"> 
+    <link href="assets/css/main.css" rel="stylesheet"> 
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="activite.js"></script>
+</head>
+<body ng-app>
+    <div ng-controller="activiteCtrl" class="container" style="padding-top:1%;margin-top:5px;border-radius: 7px;">
+        <div>
+            <nav>
+                <div  class="navRna">
+                    <a class="aNav" href="accueil.html" style="margin-left: 10%"><img src="assets/img/accueil.png" width="21" /> Accueil</a>
+                    <a class="aNav" href="profil.html" style="margin-left: 10%"> <img src="assets/img/cnx2.png" width="26"/> Profil</a>
+                    <a class="aNav" href="activite.html" style="margin-left: 10%"> <img src="assets/img/activite.png" width="24"/> Voc activités</a>
+                    <a class="aNav" ng-click="dec()" style="margin-left: 25%"><img src="assets/img/dcnx2.png" width="23"/>  Déconnexion</a>
+                </div>
+            </nav>
+            <div class="row">
+                <div class="col-md-7">
+                    <center>
+                        <h2><span style="color:#488aff;text-align: center">Liste de vos activités</span></h2>
+                        <p><span style="font-weight: bold;">Encaissements:</span> {{totEnc}} $</p>
+                        <p><span style="font-weight: bold;">Décaissements:</span> {{totDec}} $</p>
+                    </center>
+                    <table class="table table-striped">
+                        <tr>
+                            <th style="color:#488aff"><img src="assets/img/cal.png" width="15"/>  Date</th>
+                            <th style="color:#488aff"><img src="assets/img/int.png" width="15"/>  Action</th>
+                            <th style="color:#488aff"><img src="assets/img/dol.png" width="15"/>  Valeur ($) </th>
+                        </tr>
+                        <p id="cnx" style="color:grey;">En attente de la connexion ....</p>
+                        <tr ng-repeat="data in dataListe">
+                            <td>{{data.date}}</td>
+                            <td>{{data.objet}}</td>
+                            <td style="text-align: right">{{data.valeur}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-4 col-md-offset-1">
+                    <form action="">
+                        <h3>Rechercher une date</h3>
+                        <div>
+                            <label><img src="assets/img/cal.png" width="16" />  Entrer une date</label><br>
+                            <input style="width:100%" type="date" ng-model ="date" class="form-control" required></input>
+                        </div><br>
+                        <div padding>
+                            <button style="width:100%" class="btn  btn-primary" ng-click="recherche()" button block><img src="assets/img/Search.png" width="24"/>  Rechercher</button>  
+                        </div><br>
+                    </form>
+                    <div padding>
+                        <button ng-click="tout()" style="width:350px;background-color: #f3f4f5;color: #337ab7;" class="btn  btn-primary" ion-button block>  Voir toutes vos activités</button>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

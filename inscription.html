@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Banque en ligne</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/css/bootstrap.css" rel="stylesheet"> 
+    <link href="assets/css/main.css" rel="stylesheet"> 
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="inscription.js"></script>
+</head>
+<body ng-app style="background-image: url('assets/img/banque3.png');background-repeat: no-repeat;background-color: #2A2E3A">
+    <div class="container">
+        <div ng-controller="inscCtrl" class="log">
+            <div>
+                <center>
+                    <h3 style="color:#488aff"><img src="assets/img/avatar2.png" width="28" /> Inscription</h3>
+                    <p style="color:grey">{{loader}}</p>
+                </center> 
+            </div>
+            <div class="form-horizontal">   
+                <div class="contenu">
+                    <div>
+                        <label stacked><img src="assets/img/images.png" width="14"/> Nom</label>
+                        <input ng-model ="nom" type="text" class="form-control"></input>
+                    </div>
+            
+                    <div>
+                        <label stacked><img src="assets/img/crayon.png" width="12"/> Prénom</label>
+                        <input ng-model ="prenom" type="text" class="form-control"></input>
+                    </div>
+            
+                    <div>
+                        <label stacked><img src="assets/img/hf2.png" width="13"/> Sexe</label>
+                        <select ng-model ="sexe" class="form-control">
+                            <option value="Homme" selected>Homme</option>
+                            <option value="Femme">Femme</option>
+                        </select>
+                    </div>
+            
+                    <div>
+                        <label stacked><img src="assets/img/gato2.png" width="14"/> Date de naissance</label>
+                        <input ng-model ="naissance" type="date" class="form-control"></input>
+                    </div>
+            
+                    <div>
+                        <label stacked><img src="assets/img/phone.png" width="13"/>Téléphone</label>
+                        <input ng-model ="phone" type="text" class="form-control"></input>
+                    </div>
+            
+                    <div>
+                        <label stacked><img src="assets/img/mail.png" width="12"/> Email</label>
+                        <input ng-model ="email" type="email" class="form-control"></input>
+                    </div>
+                
+                    <div>
+                        <label stacked><img src="assets/img/mdp.png" width="12"/> Mot de passe</label>
+                        <input ng-model ="mdp" type="password" class="form-control"></input>
+                    </div>
+            
+                    <div>
+                        <label stacked><img src="assets/img/mdp.png" width="12"/> Confirmer mot de passe</label>
+                        <input ng-model ="mdp2" type="password" class="form-control"></input>
+                    </div>
+                    <br>
+                    <div padding>
+                        <button ng-click="insc()" class="btn  btn-primary" style="width:100%"><img src="assets/img/insc.png" width="20" /><span style="margin-left:1%">S'inscrire</span></button>  
+                    </div><br>
+                    <div padding>
+                        <button ng-click="annule()" style="width:100%;background-color: #f3f4f5;color: #337ab7;" class="btn  btn-primary" ion-button block><img src="assets/img/annule.png" width="13" /><span style="margin-left:1%">Annuler</span></button>  
+                    </div>
+                    <br>
+                </div>    
+            </div>
+        </div>
+    </div>
+</body>
+<script src="assets/js/jquery.min.js"></script> 
+<script src="assets/js/bootstrap.min.js"></script> 
+</html> 

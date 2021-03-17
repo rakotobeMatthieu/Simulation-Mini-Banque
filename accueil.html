@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Banque en ligne</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/css/bootstrap.css" rel="stylesheet"> 
+    <link href="assets/css/main.css" rel="stylesheet"> 
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="accueil.js"></script>
+</head>
+<body ng-app>
+    <div class="container" style="padding-top:1%;margin-top:5px;border-radius: 7px;">
+        <div ng-controller="accueilCtrl">
+            <nav>
+                <div class="navRna">
+                    <a class="aNav" href="accueil.html" style="margin-left: 10%"><img src="assets/img/accueil.png" width="21" /> Accueil</a>
+                    <a class="aNav" href="profil.html" style="margin-left: 10%"> <img src="assets/img/cnx2.png" width="26"/> Profil</a>
+                    <a class="aNav" href="activite.html" style="margin-left: 10%"><img src="assets/img/activite.png" width="24"/> Vos activités</a>
+                    <a class="aNav" ng-click="dec()" style="margin-left: 25%"><img src="assets/img/dcnx2.png" width="23"/>  Déconnexion</a>
+                </div>
+            </nav>
+            <br>
+            <div class="row"> 
+                <div class="col-md-offset-2 col-md-2">
+                    <img src="assets/img/rna2.jpg" width="150" alt="" class="img-circle">
+                </div>
+                <div class="col-md-8 ">
+                    <h2>Bonjour <span style="color:#488aff">{{prenom}},</span></h2>
+                    <p>
+                      Votre argent: <span style="color:#488aff">{{argent}} $</span>
+                    </p>
+                    <p>
+                      Ici, vous pouvez effectuer vos opérations bancaire.
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div>
+                <h2 style="text-align: center">Que voulez-<span style="color:#488aff">vous faire?</span></h2><br>
+                <center>
+                    <a href="decaisse.html"><button style="width:350px" class="btn  btn-primary" ion-button block>Décaisser</button></a><br><br>
+                    <a href="encaissement.html"><button style="width:350px;background-color: #f3f4f5;color: #337ab7;" class="btn  btn-primary" ion-button block>Encaisser</button></a><br><br>
+                    <a href="epargne.html"><button style="width:350px" class="btn  btn-primary" ion-button block>Epargne</button></a><br><br>
+                    <a href="cotisation.html"><button style="width:350px;background-color: #f3f4f5;color: #337ab7;" class="btn  btn-primary" ion-button block>Cotisation retraite</button></a><br><br>
+                </center>
+            </div>
+            <br>
+            <hr>
+        </div>
+    </div>          
+</body>
+<script src="assets/js/jquery.min.js"></script> 
+<script src="assets/js/bootstrap.min.js"></script> 
+</html>

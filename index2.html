@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Jeton</title>
+    <script type="text/javascript" src="angular.min.js"> </script>
+    <script type="text/javascript" src="client.js"> </script>
+    <script type="text/javascript" src="server.js"> </script>
+	<link rel="stylesheet" href="new.css" type="text/css"/>
+</head>
+	<body ng-app>
+		<div ng-controller="hitoriqueCtrl">
+			<div style="margin-left: 400px">
+				<h1>Gestion jetons</h1>
+				<input type="text" placeholder="Nom" ng-model="nom"/>
+				<br/>
+				<br/>
+				<button ng-click="logIn()">Valider</button>
+				<p>id: {{var.id}}</p>
+				<p>Nom: {{var.nom}}</p>
+				<p>Jeton: {{var.jeton}}</p>
+				<!--<button ng-click="">Acheter</button>
+				<button ng-click="">Vendre</button>
+				<button ng-click="">Gagner</button>
+				<button ng-click="">Perdre</button>-->
+			</div>
+			<div style="float:left; margin-right:400px">
+				<h2>Historique</h2>
+				<button ng-click="hitrq()">Historique</button>
+					<table border="1">
+						<tr>
+							<th>Date</th>
+							<th>Description</th>
+							<th>Tiers</th>
+							<th>Débit</th>
+							<th>Crédit</th>
+							<th>Solde</th>
+						</tr>
+						<tr ng-repeat="tab in listHistrq">
+							<td>{{tab.date}}</td>
+							<td>{{tab.description}}</td>
+							<td>{{tab.tiers}}</td>
+							<td>{{tab.debit}}</td>
+							<td>{{tab.credit}}</td>
+							<td>{{tab.solde}}</td>
+						</tr>
+					</table>
+				<br/>
+				<h2>Grouper par description</h2>
+				<button ng-click="group()">Grouper</button>
+					<table border="1">
+						<tr>
+							<th>Description</th>
+							<th>Total débit</th>
+							<th>Total crédit</th>
+							
+						</tr>
+						<tr ng-repeat="tab2 in listGroup">
+							<td>{{tab2.description}}</td>
+							<td>{{tab2.sD}}</td>
+							<td>{{tab2.sC}}</td>
+						</tr>
+					</table>
+			</div>
+			<!--exo 3-->
+			<h2>Prêt</h2>
+				<br/>
+				<input type="text" placeholder="Jeton à miser" ng-model="jeton"/>
+				<input type="text" placeholder="Joueur à emprunter" ng-model="joueurPret"/>
+				<br/>
+				<button ng-click="pret()">Pret</button>
+
+			<!--exo4-->
+			<h2>Prêt individuel</h2>
+				<br/>
+				<br/>
+				<button ng-click="pretIndiv()">Prêt individuel</button>
+					<table border="1">
+						<tr>
+							<th>Joueur</th>
+							<th>Total emprunter</th>
+							<th>Total rendu</th>
+							<th>Reste</th>
+							<!--<th>Moyenne debit</th>
+							<th>Moyenne credit</th>
+							<th>Moyenne solde</th>-->
+						</tr>
+						<tr ng-repeat="tab4 in listInd">
+							<td>{{tab4.Joueur}}</td>
+							<td>{{tab4.sD}}</td>
+							<td>{{tab4.sC}}</td>
+							<td>{{tab4.sS}}</td>
+							<!--<td>{{tab4.mD}}</td>
+							<td>{{tab4.mC}}</td>
+							<td>{{tab4.mS}}</td>-->
+						</tr>
+					</table>
+		</div>
+	</body>	
+</html>

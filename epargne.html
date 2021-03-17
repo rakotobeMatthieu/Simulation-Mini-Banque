@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Décaissement</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/css/bootstrap.css" rel="stylesheet"> 
+    <link href="assets/css/main.css" rel="stylesheet"> 
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="epargne.js"></script>
+</head>
+<body ng-app>
+    <div class="container" style="padding-top:1%;margin-top:5px;border-radius: 7px;">
+        <div ng-controller="epargneCtrl">
+            <nav>
+                <div  class="navRna">
+                    <a class="aNav" href="accueil.html" style="margin-left: 10%"><img src="assets/img/accueil.png" width="21" /> Accueil</a>
+                    <a class="aNav" href="profil.html" style="margin-left: 10%"> <img src="assets/img/cnx2.png" width="26"/>Profil</a>
+                    <a class="aNav" href="activite.html" style="margin-left: 10%"><img src="assets/img/activite.png" width="24"/>Vos activités</a>
+                    <a class="aNav" ng-click="dec()" style="margin-left: 25%"><img src="assets/img/dcnx2.png" width="23"/>  Déconnexion</a>
+                </div>
+            </nav>
+            <br><br>
+            <div class="row">
+                <div class="col-md-2 col-md-offset-1">
+                    <img src="assets/img/rna2.jpg" width="150" alt="" class="img-circle">
+                </div>
+                <div class="col-md-2">
+                    <p><span style="color:#488aff;font-weight: bold">{{nom}}</span></p>
+                    <p>{{prenom}}</p>
+                    <p>Argent: {{argent}} $</p>
+                </div>
+                <div class="col-md-7">
+                    <h2><img src="assets/img/ep2.png" width="30"/> Epargne</h2>
+                    <form class="form-inline">
+                        <label floating>Montant à épargner</label><br>
+                        <input class="form-control" ng-model = "montant" type="number"></input><br><br>
+                        <label floating>Durée de l'épargne (année)</label><br>
+                        <input class="form-control" ng-model = "duree" type="number"></input><br><br>
+                        <button ng-click="Epargne()" class="btn  btn-primary">Valider</button>  
+                    </form>
+                </div>
+                <hr>
+                <p style="text-align: center">{{Epargnes}}</p>
+                <hr> 
+            </div>
+            <hr><hr>
+        </div>
+    </div>
+</body>
+</html>
